@@ -1,0 +1,42 @@
+<!--created by prashant shukla-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ping Pong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+
+</head>
+
+<body background="https://thumbs.dreamstime.com/b/playing-table-tennis-side-view-vector-cartoon-illustration-two-table-tennis-players-playing-ping-pong-table-tennis-table-118709731.jpg">
+    <center>
+        <div class="btn btn-info heading">
+            <h3>
+                AI Ping Pong
+            </h3>
+            <i class="btn-primary" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                title="<ol><li>First, keep your device screen straight.</li><li>Move yourself 2-3 feet away from the device.</li><li>Move your wrist up and down to move the paddle up and down.</li><li>The red paddle is your paddle, while the orange one belongs to the computer.</li><li>Whenever you hit the ball, the speed of the ball increases.</li></ol>"><b
+                    style="font-family: monospace;">i</b></i>
+        </div>
+        <br><br>
+        <div id="canvas_holder"></div>
+        <br><br>
+        <button class="btn btn-info" onclick="startGame()">PLAY</button>
+    </center>
+    <script src="main.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>
