@@ -15,6 +15,12 @@ body{
     display: inline;
 }
 
+canvas {
+    background-color: aliceblue;
+    border: 3px solid black;
+    border-radius: 25px;
+}
+
 i {
     float: right;
     border: 1px solid #fff;

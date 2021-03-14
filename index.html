@@ -1,4 +1,3 @@
-<!--created by prashant shukla-->
 <!DOCTYPE html>
 <html>
 
@@ -16,24 +15,41 @@
 
 </head>
 
-<body background="https://thumbs.dreamstime.com/b/playing-table-tennis-side-view-vector-cartoon-illustration-two-table-tennis-players-playing-ping-pong-table-tennis-table-118709731.jpg">
+<body
+    background="https://thumbs.dreamstime.com/b/playing-table-tennis-side-view-vector-cartoon-illustration-two-table-tennis-players-playing-ping-pong-table-tennis-table-118709731.jpg">
     <center>
         <div class="btn btn-info heading">
             <h3>
                 AI Ping Pong
             </h3>
             <i class="btn-primary" data-toggle="tooltip" data-placement="bottom" data-html="true"
-                title="<ol><li>First, keep your device screen straight.</li><li>Move yourself 2-3 feet away from the device.</li><li>Move your wrist up and down to move the paddle up and down.</li><li>The red paddle is your paddle, while the orange one belongs to the computer.</li><li>Whenever you hit the ball, the speed of the ball increases.</li></ol>"><b
+                title="<ol><li>First, keep your device screen straight.</li><li>Move yourself 2-3 feet away from the device.</li><li>Move your left wrist up and down to move the paddle up and down.</li><li>The red paddle is your paddle, while the orange one belongs to the computer.</li><li>Whenever you hit the ball, the speed of the ball increases.</li></ol>"><b
                     style="font-family: monospace;">i</b></i>
         </div>
         <br><br>
-        <div id="canvas_holder"></div>
+        <div class="h5"
+            style="background-color: aliceblue;border: black 3px solid;padding: 25px 15px 25px 15px;width: 250px;">
+            Status: <span id="status"></span></div>
         <br><br>
-        <button class="btn btn-info" onclick="startGame()">PLAY</button>
+        <button class="btn btn-info" onclick="game()">PLAY</button>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
         <button class="btn btn-warning" onclick="restart()">RESTART</button>
+        <br><br><br><main style="display: flex;align-items: center;justify-content: center;">
+            <div id="canvas_holder"></div>
+            <br><br>
+            <div id="webcam_holder"
+                style="padding-left: 30px;padding-right: 30px; background-size:cover;background-repeat: no-repeat;background-position: center;">
+            </div>
+        </main>
+        <br><br><br><br><br>
         <div class="footer">Source code by Prashant Shukla <br>
             &copy; Editted by Shourya Sagar Gupta 2021.
         </div>
+        
     </center>
     <script src="main.js"></script>
     <script>
