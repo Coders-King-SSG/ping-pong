@@ -22,3 +22,13 @@ i {
     padding: 3px;
     width: 29px;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(122, 121, 121);
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100vw;
+}
