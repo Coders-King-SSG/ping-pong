@@ -1,6 +1,4 @@
-
-/*created by prashant shukla */
-
+var win, lose, hit, missed, game_start;
 var wristX;
 var wristY;
 
@@ -24,11 +22,20 @@ var ball = {
   dy: 3
 }
 
+function preload() {
+  win = loadSound('win.mp3');
+  lose = loadSound('lose.mp3')
+  hit = loadSound('hit.wav');
+  missed = loadSound('missed.wav');
+  game_start = loadSound('game_start.mp3')
+  confetti = loadImage('https://media-public.canva.com/CM6xI/MACyDeCM6xI/2/tl.png');
+}
+
 function setup() {
   video = createCapture(VIDEO);
   video.size(600, 500)
   video.parent('webcam_holder')
-  var canvas = createCanvas(650, 500);
+  var canvas = createCanvas(700, 500);
   canvas.parent('canvas_holder')
   posenet = ml5.poseNet(video, modelLoaded);
   posenet.on('pose', gotPoses);
@@ -50,6 +57,7 @@ function modelLoaded() {
 function game() {
   status = "Game is loaded.";
   document.getElementById('status').innerHTML = status;
+  game_start.play();
 }
 
 function draw() {
@@ -106,6 +114,7 @@ function reset() {
     ball.y = height / 2 + 100;
   ball.dx = 3;
   ball.dy = 3;
+  missed.play()
 
 }
 
@@ -148,6 +157,9 @@ function move() {
   if (ball.x - 2.5 * ball.r / 2 < 0) {
     if (ball.y >= paddle1Y && ball.y <= paddle1Y + paddle1Height) {
       ball.dx = -ball.dx + 0.5;
+    if(playerscore < 6 ) {
+      hit.play()
+    }
     }
     else {
       pcscore++;
@@ -165,6 +177,22 @@ function move() {
     text("Game Over!☹☹", width / 2, height / 2);
     text("Click on Restart button.", width / 2, height / 2 + 30)
     noLoop();
+    lose.play()
+    pcscore = 0;
+  }
+  if (playerscore == 6) {
+    fill("#FFA500");
+    stroke(0)
+    rect(0, 0, width, height - 1);
+    textSize(25)
+    image(confetti, 0, 0, width, height)
+    fill('white')
+    stroke("white");
+    text("You win!☺☺", width / 2, height / 2);
+    text("Click on Restart button.", width / 2, height / 2 + 30)
+    noLoop();
+    win.play();
+
     pcscore = 0;
   }
   if (ball.y + ball.r > height || ball.y - ball.r < 0) {
@@ -192,4 +220,8 @@ function paddleInCanvas() {
   if (wristY < 0) {
     wristY = 0;
   }
+}
+
+function restart() {
+  window.location.reload();
 }
