@@ -35,7 +35,7 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(600, 500)
   video.parent('webcam_holder')
-  var canvas = createCanvas(700, 500);
+  var canvas = createCanvas(500, 500);
   canvas.parent('canvas_holder')
   posenet = ml5.poseNet(video, modelLoaded);
   posenet.on('pose', gotPoses);
